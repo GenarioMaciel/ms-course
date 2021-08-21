@@ -18,8 +18,6 @@ public class PaymentService {
 	private WorkerFeignClient workerFeignClient;
 	
 	public Payment getPayment(long workerId, int days) {
-		Map<String, String> uriVariables = new HashMap<>();
-		uriVariables.put("id", String.valueOf(workerId)); 
 		
 		Worker worker = workerFeignClient.findById(workerId).getBody();
 		
